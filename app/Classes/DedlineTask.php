@@ -13,10 +13,11 @@ class DedlineTask extends Task implements HasStartDateInterface, HasDueDateInter
     use HasAssigneeTrait;
     protected $startDate;
     protected $dueDate;
+    protected $priority;
 
 
     //Method
-    public function __construct($title, $description, $startDate, $dueDate)
+    public function __construct($title, $description, $startDate, $dueDate, $priority)
     {
 
         parent::__construct($title, $description);
@@ -24,6 +25,7 @@ class DedlineTask extends Task implements HasStartDateInterface, HasDueDateInter
         $this->startDate = $startDate;
 
         $this->dueDate = $dueDate;
+        $this->priority = $priority;
     }
 
     public function getStartDate()
@@ -39,7 +41,8 @@ class DedlineTask extends Task implements HasStartDateInterface, HasDueDateInter
 
     public function getPriority()
     {
-        return "Low";
+        // return "Low";
+        return $this->priority;
     }
     public function markAsCompleted()
     {

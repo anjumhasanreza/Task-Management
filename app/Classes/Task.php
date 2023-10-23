@@ -9,7 +9,8 @@ abstract class Task
     protected $completed;
 
     //Methods
-    public function __construct($title, $description){
+    public function __construct($title, $description)
+    {
         $this->title = $title;
         $this->description = $description;
         $this->completed = false;
@@ -20,19 +21,18 @@ abstract class Task
     abstract public function markAsCompleted();
 
     //Getters
-    public function getTitle(){
+    public function getTitle()
+    {
         return $this->title;
     }
 
-    public function getDescription(){
+    public function getDescription()
+    {
         return $this->description;
     }
 
-    public function isCompleted(){
+    public function isCompleted()
+    {
         return $this->completed;
     }
-
-
-
-
 }
